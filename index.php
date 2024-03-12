@@ -13,48 +13,9 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css">
 
-  <style>
-    * {
-      font-family: 'Poppins', sans-serif;
-    }
 
-    .h-font {
-      font-family: 'Merienda', cursive;
-    }
-
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-
-    input[type=number] {
-      -moz-appearance: textfield;
-      3
-    }
-
-    .custom-bg {
-      background-color: #2ec1ac;
-    }
-
-    .custom-bg:hover {
-      background-color: #279e8c;
-    }
-
-    .availability-form {
-      margin-top: -50px;
-      z-index: 2;
-      position: relative;
-    }
-
-    @media screen and (max-width: 575px) {
-      .availability-form {
-        margin-top: 25px;
-        padding: 0 35px;
-      }
-    }
-  </style>
 </head>
 
 <body class="bg-light">
@@ -157,6 +118,14 @@
                   <input type="email" class="form-control shadow-none">
                 </div>
                 <div class="col-md-6 ps-0 mb-3">
+                  <label class="form-label">Password</label>
+                  <input type="password" class="form-control shadow-none">
+                </div>
+                <div class="col-md-6 p-0 mb-3">
+                  <label class="form-label">Confirm Password</label>
+                  <input type="password" class="form-control shadow-none">
+                </div>
+                <div class="col-md-6 ps-0 mb-3">
                   <label class="form-label">Phone Number</label>
                   <input type="number" class="form-control shadow-none">
                 </div>
@@ -176,14 +145,7 @@
                   <label class="form-label">Date of birth</label>
                   <input type="date" class="form-control shadow-none">
                 </div>
-                <div class="col-md-6 ps-0 mb-3">
-                  <label class="form-label">Password</label>
-                  <input type="password" class="form-control shadow-none">
-                </div>
-                <div class="col-md-6 p-0 mb-3">
-                  <label class="form-label">Confirm Password</label>
-                  <input type="password" class="form-control shadow-none">
-                </div>
+                
               </div>
             </div>
             <div class="text-center my-1">
