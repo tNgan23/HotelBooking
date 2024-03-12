@@ -12,6 +12,8 @@
     href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <style>
     * {
       font-family: 'Poppins', sans-serif;
@@ -31,10 +33,31 @@
       -moz-appearance: textfield;
       3
     }
+
+    .custom-bg {
+      background-color: #2ec1ac;
+    }
+
+    .custom-bg:hover {
+      background-color: #279e8c;
+    }
+
+    .availability-form {
+      margin-top: -50px;
+      z-index: 2;
+      position: relative;
+    }
+
+    @media screen and (max-width: 575px) {
+      .availability-form {
+        margin-top: 25px;
+        padding: 0 35px;
+      }
+    }
   </style>
 </head>
 
-<body>
+<body class="bg-light">
   <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="index.php">Hotel Booking</a>
@@ -172,9 +195,119 @@
     </div>
   </div>
 
+  <!-- Carousel -->
+
+  <div class="container-fluid px-lg-4 mt-4">
+    <div class="swiper swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="image/carousel/carousel-hotel-1.jpg" class="w-100 d-block" />
+        </div>
+
+        <div class="swiper-slide">
+          <img src="image/carousel/carousel-hotel-3.jpg" class="w-100 d-block" />
+        </div>
+        <div class="swiper-slide">
+          <img src="image/carousel/carousel-hotel-4.jpg" class="w-100 d-block" />
+        </div>
+        <div class="swiper-slide">
+          <img src="image/carousel/carousel-hotel-5.jpg" class="w-100 d-block" />
+        </div>
+        <div class="swiper-slide">
+          <img src="image/carousel/carousel-hotel-6.png" class="w-100 d-block" />
+        </div>
+        <div class="swiper-slide">
+          <img src="image/carousel/carousel-hotel-7.png" class="w-100 d-block" />
+        </div>
+        <div class="swiper-slide">
+          <img src="image/carousel/carousel-hotel-8.png" class="w-100 d-block" />
+        </div>
+        <div class="swiper-slide">
+          <img src="image/carousel/carousel-hotel-9.png" class="w-100 d-block" />
+        </div>
+        <div class="swiper-slide">
+          <img src="image/carousel/carousel-hotel-10.png" class="w-100 d-block" />
+        </div>
+        <div class="swiper-slide">
+          <img src="image/carousel/carousel-hotel-11.png" class="w-100 d-block" />
+        </div>
+        <div class="swiper-slide">
+          <img src="image/carousel/carousel-hotel-2.jpg" class="w-100 d-block" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- check availability form -->
+
+  <div class="container  availability-form">
+    <div class="row">
+      <div class="col-lg-12 bg-white shadow p-4 rounded">
+        <h5 class="mb-4">Check Booking Availability</h5>
+        <form>
+          <div class="row align-items-end">
+            <div class="col-lg-3 mb-3">
+              <label class="form-label " style="font-weight:500;">Check-in</label>
+              <input type="date" class="form-control shadow-none">
+            </div>
+            <div class="col-lg-3 mb-3">
+              <label class="form-label " style="font-weight:500;">Check-out</label>
+              <input type="date" class="form-control shadow-none">
+            </div>
+            <div class="col-lg-3 mb-3">
+              <label class="form-label " style="font-weight:500;">Adult</label>
+              <select class="form-select shadow-none">
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+
+            <div class="col-lg-2 mb-3">
+              <label class="form-label " style="font-weight:500;">Children</label>
+              <select class="form-select shadow-none">
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+
+            <div class="col-lg-1 mb-lg-3 mt-2">
+              <button type="submit" class="btn text-white shadow-none custom-bg">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <br><br><br>
+  <br><br><br>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
+
+  <script>
+    var swiper = new Swiper(".swiper-container", {
+      spaceBetween: 30,
+      effect: "fade",
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      }
+    });
+  </script>
+
+
+
+
 </body>
 
 </html>
