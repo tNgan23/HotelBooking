@@ -519,17 +519,119 @@
             <i class="bi bi-star-fill text-warning"></i>
           </div>
         </div>
+        <div class="swiper-slide bg-white p-4">
+          <div class="profile d-flex align-items-center mb-3">
+            <img src="image/facilities/star.svg" width="30px">
+            <h6 class="m-0 ms-2">Random user3</h6>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Nobis placeat, quidem adipisci, explicabo ratione deleniti minima ab veritatis vel, doloremque incidunt!
+            Vel rem sapiente ipsam explicabo eum consequatur incidunt voluptate.
+          </p>
+          <div class="rating">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+          </div>
+        </div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
 
   </div>
 
+  <!-- Reach us -->
 
-  <br><br><br>
-  <br><br><br>
+  <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">REACH US</h2>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
+        <iframe class="w-100 rounded" height="320px"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125404.29923661126!2d106.78985055000001!3d10.820161500000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d85e042bf04b%3A0xbb26baec1664394d!2zVGjhu6cgxJDhu6ljLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmg!5e0!3m2!1svi!2s!4v1710515179676!5m2!1svi!2s"
+          loading="lazy"></iframe>
+      </div>
+      <div class="col-lg-4 col-md-4">
+        <div class="bg-white p-4 rounded mb-4">
+          <h5>
+            Call us
+          </h5>
+          <a href="tel: +84028520583" class="d-inline-block mb-2 text-decoration-none text-dark">
+            <i class="bi bi-telephone-fill"></i>+84028520583
+          </a>
+          <br>
+          <a href="tel: +84028520583" class="d-inline-block mb-2 text-decoration-none text-dark">
+            <i class="bi bi-telephone-fill"></i>+84028520583
+          </a>
+        </div>
 
+        <div class="bg-white p-4 rounded mb-4">
+          <h5>
+            Follow us
+          </h5>
+          <a href="#" class="d-inline-block mb-3">
+            <span class="badge bg-light text-dark fs-6 p-2">
+              <i class="bi bi-youtube  me-2"></i>Youtube</span>
+          </a>
+          <br>
+          <a href="#" class="d-inline-block mb-3">
+            <span class="badge bg-light text-dark fs-6 p-2">
+              <i class="bi bi-facebook me-2"></i>Facebook</span>
+          </a>
+          <br>
+          <a href="#" class="d-inline-block mb-3">
+            <span class="badge bg-light text-dark fs-6 p-2">
+              <i class="bi bi-instagram me-2"></i>Instagram</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer design -->
+
+  <div class="container-fluid bg-white mt-5">
+    <div class="row">
+      <div class="col-lg-4 p-4">
+        <h3 class="h-font fw-bold fs-3 mb-2">HOTEL BOOKING</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Magni suscipit libero id unde possimus eaque a nobis repudiandae magnam delectus. Quae rem exercitationem
+          possimus fugit?
+          Deserunt tenetur neque consequuntur nam.
+
+        </p>
+      </div>
+      <div class="col-lg-4 p-4">
+        <h5 class="mb-3">
+          Links
+        </h5>
+        <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">Home</a><br>
+        <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">Rooms</a><br>
+        <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">Facilities</a><br>
+        <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">Contact us</a><br>
+        <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">About</a>
+      </div>
+      <div class="col-lg-4 p-4">
+        <h5 class="mb-3">
+          Follow us
+        </h5>
+        <a href="#" class="d-inline-block text-dark text-decoration-none mb-2">
+          <i class="bi bi-youtube me-2"></i>Youtube
+        </a><br>
+        <a href="#" class="d-inline-block text-dark text-decoration-none mb-2">
+          <i class="bi bi-facebook me-2"></i>Facebook
+        </a><br>
+        <a href="#" class="d-inline-block text-dark text-decoration-none">
+          <i class="bi bi-instagram me-2"></i>Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+  <h6 class="text-center bg-dark text-white p-3 m-0">Designed and Developed by Team-NLTT</h6>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -576,7 +678,7 @@
         1024: {
           slidesPerView: 3, // Giả sử bạn muốn hiển thị 3 slides tại key 1024
         },
-        
+
       }
     });
   </script>
