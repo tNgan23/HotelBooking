@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hotel Booking-HOME</title>
-  <?php require('inc/links.php'); ?>
+  <?php require ('inc/links.php'); ?>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <style>
@@ -26,8 +26,8 @@
 </head>
 
 <body class="bg-light">
-  <?php require('inc/header.php'); ?>
-  
+  <?php require ('inc/header.php'); ?>
+
   <!-- Quảng Cáo -->
 
   <div class="container-fluid px-lg-4 mt-4">
@@ -156,6 +156,15 @@
                 Room heater <!--bình nóng lạnh -->
               </span>
             </div>
+            <div class="guests mb-4">
+              <h6 class="mb-1">Guests</h6>
+              <span class="badge roundes-pill bg-light text-dark text-wrap">
+                5 Adult
+              </span>
+              <span class="badge roundes-pill bg-light text-dark text-wrap">
+                3 Children
+              </span>
+            </div>
             <div class="rating mb-4">
               <h6 class="mb-1">Rating</h6>
               <span class="badge rounded-pill bg-light">
@@ -210,6 +219,15 @@
                 Room heater <!--bình nóng lạnh -->
               </span>
             </div>
+            <div class="guests mb-4">
+              <h6 class="mb-1">Guests</h6>
+              <span class="badge roundes-pill bg-light text-dark text-wrap">
+                5 Adult
+              </span>
+              <span class="badge roundes-pill bg-light text-dark text-wrap">
+                3 Children
+              </span>
+            </div>
             <div class="rating mb-4">
               <h6 class="mb-1">Rating</h6>
               <span class="badge rounded-pill bg-light">
@@ -262,6 +280,15 @@
               </span>
               <span class="badge roundes-pill bg-light text-dark text-wrap">
                 Room heater <!--bình nóng lạnh -->
+              </span>
+            </div>
+            <div class="guests mb-4">
+              <h6 class="mb-1">Guests</h6>
+              <span class="badge roundes-pill bg-light text-dark text-wrap">
+                5 Adult
+              </span>
+              <span class="badge roundes-pill bg-light text-dark text-wrap">
+                3 Children
               </span>
             </div>
             <div class="rating mb-4">
@@ -451,10 +478,10 @@
 
   <!-- Footer design -->
 
-  <?php require('inc/footer.php'); ?>
+  <?php require ('inc/footer.php'); ?>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
- 
+
 
   <script>
     var swiper = new Swiper(".swiper-container", {
