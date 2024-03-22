@@ -14,7 +14,7 @@
 
 
     <div class="container-fluid bg-dark text-light p-3 d-flex align-items-center justify-content-between">
-        <h3>ADMIN PANEL</h3>
+        <h3 class="mb-0 h-font">HB WEBSITE</h3>
         <a href="logout.php" class="btn btn-light btn-sm">LOG OUT</a>
     </div>
 
