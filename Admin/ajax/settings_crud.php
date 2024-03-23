@@ -22,5 +22,15 @@ if (isset($_POST["upd_genaral"])) {
     echo $res;
 }
 
+if (isset($_POST["upd_shutdown"])) {
+    // Giả sử 'update' và 'update' là các hàm được định nghĩa ở nơi khác
+    $frm_data = ($_POST['upd_shutdown']) ? 1 : 0;
+
+    $q = "UPDATE `settings` SET `shutdown`=? WHERE `sr_no`=?";
+    $values = [$frm_data, 1];
+    $res = update($q, $values, 'ii');
+    echo $res;
+}
+
 
 ?>
