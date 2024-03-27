@@ -214,21 +214,13 @@ adminLogin();
                                                         <span class="input-group-text"><i
                                                                 class="bi bi-facebook"></i></span>
                                                         <input type="text" name="fb" id="fb_inp"
-<<<<<<< HEAD
                                                             class="form-control shadow-none" required>
-=======
-                                                            class="form-control shadow-none" require>
->>>>>>> nganhtt
                                                     </div>
                                                     <div class="input-group mb-3">
                                                         <span class="input-group-text"><i
                                                                 class="bi bi-instagram"></i></span>
                                                         <input type="text" name="insta" id="insta_inp"
-<<<<<<< HEAD
-                                                            class="form-control shadow-none" required>
-=======
                                                             class="form-control shadow-none" require>
->>>>>>> nganhtt
                                                     </div>
                                                     <div class="input-group mb-3">
                                                         <span class="input-group-text"><i
@@ -327,15 +319,9 @@ adminLogin();
         let member_picture_inp = document.getElementById('member_picture_inp');
 
 
-<<<<<<< HEAD
-    function get_general() {
-        let site_title = document.getElementById('site_title');
-        let site_about = document.getElementById('site_about');
-=======
         function get_general() {
             let site_title = document.getElementById('site_title');
             let site_about = document.getElementById('site_about');
->>>>>>> nganhtt
 
             let shutdown_toggle = document.getElementById('shutdown-toggle');
 
@@ -370,17 +356,10 @@ adminLogin();
             upd_genaral(site_title_inp.value, site_about_inp.value)
         })
 
-<<<<<<< HEAD
-    general_s_form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        upd_genaral(site_title_inp.value, site_about_inp.value)
-    })
-=======
         function upd_genaral(site_title_val, site_about_val) {
             let xhr = new XMLHttpRequest();
             xhr.open("POST", "ajax/settings_crud.php", true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
->>>>>>> nganhtt
 
             xhr.onload = function () {
                 var myModal = document.getElementById('general-s');
@@ -458,15 +437,8 @@ adminLogin();
 
             let data_str = "";
 
-<<<<<<< HEAD
-            if (this.responseText == 1 && general_data.shutdown == 0) {
-                alert('success', 'Site has been shutdown !  ');
-            } else {
-                alert('error', 'Shutdown mode off !   ');
-=======
             for (i = 0; i < index.length; i++) {
                 data_str += index[i] + "=" + document.getElementById(contacts_inp_id[i]).value + '&';
->>>>>>> nganhtt
             }
             data_str += "upd_contacts";
 
@@ -559,87 +531,6 @@ adminLogin();
             get_contacts();
             get_members();
         }
-<<<<<<< HEAD
-        xhr.send('upd_shutdown=' + val);
-
-    }
-
-    function get_contacts() {
-        let contacts_p_id = ['address', 'gmap', 'pn1', 'pn2', 'email', 'fb', 'insta', 'ytb'];
-        let iframe = document.getElementById('iframe');
-
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "ajax/settings_crud.php", true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-        xhr.onload = function() {
-            contacts_data = JSON.parse(this.responseText);
-            contacts_data = Object.values(contacts_data);
-
-            for (i = 0; i < contacts_p_id.length; i++) {
-                document.getElementById(contacts_p_id[i]).innerText = contacts_data[i + 1];
-            }
-            iframe.src = contacts_data[9];
-            contacts_inp(contacts_data);
-        }
-
-        xhr.send('get_contacts');
-    }
-
-    function contacts_inp(data) {
-        let contacts_inp_id = ['address_inp', 'gmap_inp', 'pn1_inp', 'pn2_inp', 'email_inp', 'fb_inp', 'insta_inp',
-            'ytb_inp', 'iframe_inp'
-        ];
-
-        for (i = 0; i < contacts_inp_id.length; i++) {
-            document.getElementById(contacts_inp_id[i]).value = data[i + 1];
-        }
-    }
-
-    contacts_s_form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        upd_contacts();
-    })
-
-    function upd_contacts() {
-        let index = ['address', 'gmap', 'pn1', 'pn2', 'email', 'fb', 'insta', 'ytb', 'iframe'];
-        let contacts_inp_id = ['address_inp', 'gmap_inp', 'pn1_inp', 'pn2_inp', 'email_inp', 'fb_inp', 'insta_inp',
-            'ytb_inp', 'iframe_inp'
-        ];
-
-        let data_str = "";
-
-        for (i = 0; i < index.length; i++) {
-            data_str += index[i] + "=" + document.getElementById(contacts_inp_id[i]).value + '&';
-        }
-        data_str += "upd_contacts";
-
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "ajax/settings_crud.php", true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-        xhr.onload = function() {
-            var myModal = document.getElementById('contacts-s');
-            var modal = bootstrap.Modal.getInstance(myModal);
-            modal.hide();
-            if (this.responseText == 1) {
-                alert('success', 'Changes saved!');
-                get_contacts();
-            } else {
-                alert('error', 'No changes made!');
-            }
-            get_general();
-        }
-
-        xhr.send(data_str);
-    }
-
-    window.onload = function() {
-        get_general();
-        get_contacts();
-    }
-=======
->>>>>>> nganhtt
     </script>
 </body>
 
