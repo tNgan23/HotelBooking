@@ -211,12 +211,25 @@ adminLogin();
                                                 <div class="mb-3">
                                                     <label class="form-label fw-bold">Social Links</label>
                                                     <div class="input-group mb-3">
+<<<<<<< HEAD
                                                         <span class="input-group-text"><i class="bi bi-facebook"></i></span>
                                                         <input type="text" name="fb" id="fb_inp" class="form-control shadow-none" require>
                                                     </div>
                                                     <div class="input-group mb-3">
                                                         <span class="input-group-text"><i class="bi bi-instagram"></i></span>
                                                         <input type="text" name="insta" id="insta_inp" class="form-control shadow-none"require>
+=======
+                                                        <span class="input-group-text"><i
+                                                                class="bi bi-facebook"></i></span>
+                                                        <input type="text" name="fb" id="fb_inp"
+                                                            class="form-control shadow-none" required>
+                                                    </div>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text"><i
+                                                                class="bi bi-instagram"></i></span>
+                                                        <input type="text" name="insta" id="insta_inp"
+                                                            class="form-control shadow-none" require>
+>>>>>>> main
                                                     </div>
                                                     <div class="input-group mb-3">
                                                         <span class="input-group-text"><i
@@ -315,10 +328,16 @@ adminLogin();
         let member_picture_inp = document.getElementById('member_picture_inp');
 
 
+<<<<<<< HEAD
     function get_general() 
     {
         let site_title = document.getElementById('site_title');
         let site_about = document.getElementById('site_about');
+=======
+        function get_general() {
+            let site_title = document.getElementById('site_title');
+            let site_about = document.getElementById('site_about');
+>>>>>>> main
 
             let shutdown_toggle = document.getElementById('shutdown-toggle');
 
@@ -348,10 +367,17 @@ adminLogin();
             xhr.send('get_general');
         }
 
+<<<<<<< HEAD
     general_s_form.addEventListener('submit', function(e){
         e.preventDefault();
         upd_genaral(site_title_inp.value, site_about_inp.value)
     })
+=======
+        general_s_form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            upd_genaral(site_title_inp.value, site_about_inp.value)
+        })
+>>>>>>> main
 
         function upd_genaral(site_title_val, site_about_val) {
             let xhr = new XMLHttpRequest();
@@ -432,6 +458,7 @@ adminLogin();
         upd_contacts();
     })
 
+<<<<<<< HEAD
     function upd_contacts()
     {
         let index = ['address','gmap','pn1','pn2','email','fb','insta','ytb','iframe'];
@@ -443,6 +470,18 @@ adminLogin();
             data_str += index[i]+ "=" + document.getElementById(contacts_inp_id[i]).value + '&';
         }
         data_str += "upd_contacts";
+=======
+        function upd_contacts() {
+            let index = ['address', 'gmap', 'pn1', 'pn2', 'email', 'fb', 'insta', 'ytb', 'iframe'];
+            let contacts_inp_id = ['address_inp', 'gmap_inp', 'pn1_inp', 'pn2_inp', 'email_inp', 'fb_inp', 'insta_inp', 'ytb_inp', 'iframe_inp'];
+
+            let data_str = "";
+
+            for (i = 0; i < index.length; i++) {
+                data_str += index[i] + "=" + document.getElementById(contacts_inp_id[i]).value + '&';
+            }
+            data_str += "upd_contacts";
+>>>>>>> main
 
             let xhr = new XMLHttpRequest();
             xhr.open("POST", "ajax/settings_crud.php", true);
