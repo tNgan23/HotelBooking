@@ -191,7 +191,7 @@ adminLogin();
                                                             <id="<i class="bi bi-telephone-fill"></i>
                                                         </span>
                                                         <input type="text" name="pn1" id="pn1_inp"
-                                                            class="form-control shadow-none" require>
+                                                            class="form-control shadow-none" required>
                                                     </div>
                                                     <div class="input-group mb-3">
                                                         <span class="input-group-text">

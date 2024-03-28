@@ -13,7 +13,7 @@ if (isset($_POST['get_general'])) {
     echo $json_data;
 }
 
-if (isset($_POST["upd_genaral"])) {
+if (isset($_POST["upd_general"])) {
     $frm_data=filteration($_POST);
 
     $q="UPDATE `settings` SET `site_title`=?,`site_about`=? WHERE `sr_no`=?";
