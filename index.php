@@ -24,7 +24,7 @@
     }
   </style>
 </head>
-
+<!-- lok -->
 <body class="bg-light">
   <?php require ('inc/header.php'); ?>
 
