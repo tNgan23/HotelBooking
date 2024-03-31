@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
-=======
 <?php
     require('Admin/inc/db_config.php');
     require('Admin/inc/essentials.php');
@@ -14,7 +11,7 @@
 
 
 <nav id="nav-bar" class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
->>>>>>> nganhtt
+
     <div class="container-fluid">
         <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="index.php">HOTEL BOOKING</a>
         <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
