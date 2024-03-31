@@ -86,6 +86,21 @@
   <div class="container px-4">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper mb-5">
+
+        <?php
+        $about_r = selectAll('team_details');
+        $path=ABOUT_IMG_PATH;
+        while ($row = mysqli_fetch_assoc($about_r)) {
+          echo <<<data
+            <div class="swiper-slide bg-white text-center overflow-hidden rounded">
+            <img src="$path$row[picture]" class="w-100"> 
+            <h5 class="st-2">$row[name]</h5>
+            </div>
+          data;
+        }
+        ?>
+
+
         <div class="swiper-slide bg-white text-center overflow-hidden rounded">
           <img src="image/about/team.jpg" class="w-100">
           <h5 class="mt-2">Random Name</h5>
@@ -119,21 +134,21 @@
   <script>
     var swiper = new Swiper(".mySwiper", {
       slidesPerView: 4,
-      spaceBetween:40,
+      spaceBetween: 40,
       pagination: {
         el: ".swiper-pagination",
       },
-      breakpoints:{
-        320:{
+      breakpoints: {
+        320: {
           slidesPerView: 1,
         },
-        640:{
+        640: {
           slidesPerView: 1,
         },
-        768:{
+        768: {
           slidesPerView: 3,
         },
-        1024:{
+        1024: {
           slidesPerView: 3,
         },
       }
