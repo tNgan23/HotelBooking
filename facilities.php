@@ -35,66 +35,26 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 col-md-6 mb-5 px-4">
-        <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-          <div class="d-flex align-items-center mb-2">
-            <img src="image/facilities/Wifi.svg" width="40px">
-            <h5 class="m-0 ms-3">Wifi</h5>
+      <?php 
+      $res = selectAll('facilities');
+      $path= FACILITIES_IMG_PATH;
+       
+      while ($row = mysqli_fetch_assoc($res)) { 
+
+        echo<<<data
+            <div class="col-lg-4 col-md-6 mb-5 px-4">
+            <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
+              <div class="d-flex align-items-center mb-2">
+                <img src="$path$row[icon]" width="40px">
+                <h5 class="m-0 ms-3">$row[name]</h5>
+              </div>
+              <p>$row[description]</p>
+            </div>
           </div>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Ratione modi hic eveniet odit vero iste deserunt.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-5 px-4">
-        <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-          <div class="d-flex align-items-center mb-2">
-            <img src="image/facilities/Television.svg" width="40px">
-            <h5 class="m-0 ms-3">Television</h5>
-          </div>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Ratione modi hic eveniet odit vero iste deserunt.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-5 px-4">
-        <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-          <div class="d-flex align-items-center mb-2">
-            <img src="image/facilities/Radio.svg" width="40px">
-            <h5 class="m-0 ms-3">Radio Music</h5>
-          </div>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Ratione modi hic eveniet odit vero iste deserunt.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-5 px-4">
-        <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-          <div class="d-flex align-items-center mb-2">
-            <img src="image/facilities/AC.svg" width="40px">
-            <h5 class="m-0 ms-3">Air Conditioner</h5>
-          </div>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Ratione modi hic eveniet odit vero iste deserunt.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-5 px-4">
-        <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-          <div class="d-flex align-items-center mb-2">
-            <img src="image/facilities/WaterHeater.svg" width="40px">
-            <h5 class="m-0 ms-3">Water Heater</h5>
-          </div>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Ratione modi hic eveniet odit vero iste deserunt.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-5 px-4">
-        <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-          <div class="d-flex align-items-center mb-2">
-            <img src="image/facilities/Massage.svg" width="40px">
-            <h5 class="m-0 ms-3">Massage Relaxing</h5>
-          </div>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Ratione modi hic eveniet odit vero iste deserunt.</p>
-        </div>
-      </div>
+        data;
+      }
+
+      ?>
     </div>
   </div>
 
