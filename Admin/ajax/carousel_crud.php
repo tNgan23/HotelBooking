@@ -38,7 +38,7 @@
             <div class="card bg-dark text-white">
                 <img src="$path$row[image]" class="card-img">
                 <div class="card-img-overlay text-end">
-                    <button type="button" onclick="rem_member($row[sr_no])" class="btn btn-danger btn-sm shadow-none">
+                    <button type="button" onclick="rem_image($row[sr_no])" class="btn btn-danger btn-sm shadow-none">
                         <i class="bi bi-trash"></i> Delete
                     </button>
                 </div>
@@ -48,17 +48,17 @@
         }
     }
 
-    if (isset ($_POST['rem_member'])) 
+    if (isset ($_POST['rem_image'])) 
     {
         $frm_data = filteration($_POST);
-        $values = [$frm_data['rem_member']];
+        $values = [$frm_data['rem_image']];
 
-        $pre_q = "SELECT * FROM `team_details` WHERE `sr_no`=?";
+        $pre_q = "SELECT * FROM `carousel` WHERE `sr_no`=?";
         $res = select($pre_q, $values, 'i');
         $img = mysqli_fetch_assoc($res);
 
-        if (deleteImage($img['picture'], ABOUT_FOLDER)) {
-            $q = "DELETE FROM `team_details` WHERE   `sr_no`=?";
+        if (deleteImage($img['image'], CAROUSEL_FOLDER)) {
+            $q = "DELETE FROM `carousel` WHERE   `sr_no`=?";
             $res = delete($q, $values, 'i');
             echo $res;
         } else {

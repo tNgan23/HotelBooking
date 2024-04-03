@@ -49,21 +49,21 @@
             xhr.send('get_carousel');
         }
 
-        function rem_member(val) {
+        function rem_image(val) {
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "ajax/settings_crud.php", true);
+            xhr.open("POST", "ajax/carousel_crud.php", true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
             xhr.onload = function () {
                 if (this.responseText == 1) {
-                    alert('success', 'Member removed!');
+                    alert('success', 'Image removed!');
                     get_carousel();
                 } else {
                     alert('error', 'Server down!');
                 }
 
             }
-            xhr.send('rem_member=' + val);
+            xhr.send('rem_image=' + val);
         }
 
         window.onload = function () {
