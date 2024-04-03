@@ -5,12 +5,14 @@
 
 define('SITE_URL', 'http://localhost:8080/hotelbooking/');
 define('ABOUT_IMG_PATH', SITE_URL . 'image/about/');
+define('CAROUSEL_IMG_PATH', SITE_URL . 'image/carousel/');
 
 
 
 //backend upload process needs this data
 define('UPLOAD_IMAGE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/hotelbooking/image/');
 define('ABOUT_FOLDER', 'about/');
+define('CAROUSEL_FOLDER', 'carousel/');
 
 function adminLogin()
 {
