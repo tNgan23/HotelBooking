@@ -45,39 +45,7 @@
             data;
             }
         ?>
-        <div class="swiper-slide">
-          <img src="image/carousel/carousel-hotel-1.jpg" class="w-100 d-block" />
-        </div>
-        <div class="swiper-slide">
-          <img src="image/carousel/carousel-hotel-3.jpg" class="w-100 d-block" />
-        </div>
-        <div class="swiper-slide">
-          <img src="image/carousel/carousel-hotel-4.jpg" class="w-100 d-block" />
-        </div>
-        <div class="swiper-slide">
-          <img src="image/carousel/carousel-hotel-5.jpg" class="w-100 d-block" />
-        </div>
-        <div class="swiper-slide">
-          <img src="image/carousel/carousel-hotel-6.png" class="w-100 d-block" />
-        </div>
-        <div class="swiper-slide">
-          <img src="image/carousel/carousel-hotel-7.png" class="w-100 d-block" />
-        </div>
-        <div class="swiper-slide">
-          <img src="image/carousel/carousel-hotel-8.png" class="w-100 d-block" />
-        </div>
-        <div class="swiper-slide">
-          <img src="image/carousel/carousel-hotel-9.png" class="w-100 d-block" />
-        </div>
-        <div class="swiper-slide">
-          <img src="image/carousel/carousel-hotel-10.png" class="w-100 d-block" />
-        </div>
-        <div class="swiper-slide">
-          <img src="image/carousel/carousel-hotel-11.png" class="w-100 d-block" />
-        </div>
-        <div class="swiper-slide">
-          <img src="image/carousel/carousel-hotel-2.jpg" class="w-100 d-block" />
-        </div>
+        
       </div>
     </div>
   </div>

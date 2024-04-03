@@ -89,35 +89,55 @@
             </div>
             <div class="col-lg-6 col-md-6 mb-5 px-4">
                 <div class="bg-white rounder shadow p-4">
-                    <form>
+                    <form method="POST" >
                         <h5>Send a message</h5>
                         <div class="mb-3">
                             <label class="form-label" style="font-weight: 500;">Name</label>
                             <!-- Đây là trường nhập liệu email. Sử dụng type="email" giúp trình duyệt kiểm tra xem giá trị nhập vào có đúng định dạng email hay không -->
-                            <input type="text" class="form-control shadow-none">
+                            <input name="name" required type="text" class="form-control shadow-none">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" style="font-weight: 500;">Email</label>
                             <!-- Đây là trường nhập liệu email. Sử dụng type="email" giúp trình duyệt kiểm tra xem giá trị nhập vào có đúng định dạng email hay không -->
-                            <input type="email" class="form-control shadow-none">
+                            <input name="email" required type="email" class="form-control shadow-none">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" style="font-weight: 500;">Submit</label>
+                            <label class="form-label" style="font-weight: 500;">Subject</label>
                             <!-- Đây là trường nhập liệu email. Sử dụng type="email" giúp trình duyệt kiểm tra xem giá trị nhập vào có đúng định dạng email hay không -->
-                            <input type="text" class="form-control shadow-none">
+                            <input name="subject" required type="text" class="form-control shadow-none">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" style="font-weight: 500;">Message</label>
                             <!-- Đây là trường nhập liệu email. Sử dụng type="email" giúp trình duyệt kiểm tra xem giá trị nhập vào có đúng định dạng email hay không -->
-                            <textarea class="form-control shadow-none" rows="5" style="resize: none;"></textarea>
+                            <textarea name="message" required class="form-control shadow-none" rows="5" style="resize: none;"></textarea>
                         </div>
-                        <button type="submit" class="btn text-white custom-bg mt-3">SEND</button>
+                        <button type="submit" name="send" class="btn text-white custom-bg mt-3">SEND</button>
 
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <?php
+    
+        if (isset($_POST['send'])) 
+        {
+            $frm_data = filteration($_POST);
+
+            $q ="INSERT INTO `user_queries`(`name`, `email`, `subject`, `message`) VALUES (?,?,?,?)";
+            $values = [$frm_data['name'], $frm_data['email'], $frm_data['subject'],$frm_data['message']];
+
+            $res = insert($q,$values,'ssss');
+            if($res==1){
+                alert('success','Mail sent!');
+            }
+            else{
+                alert('error','Server Down! Try again later.');
+            }
+        }
+    
+    ?>
 
 
     <?php require ('inc/footer.php'); ?>

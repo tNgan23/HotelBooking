@@ -190,13 +190,13 @@ adminLogin();
                                                         <span class="input-group-text">
                                                             <id="<i class="bi bi-telephone-fill"></i>
                                                         </span>
-<<<<<<< HEAD
+
                                                         <input type="text" name="pn1" id="pn1_inp"
                                                             class="form-control shadow-none" required>
-=======
+
                                                         <input type="number" name="pn1" id="pn1_inp"
                                                             class="form-control shadow-none" require>
->>>>>>> nganhtt
+
                                                     </div>
                                                     <div class="input-group mb-3">
                                                         <span class="input-group-text">
