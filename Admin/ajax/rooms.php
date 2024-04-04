@@ -64,7 +64,7 @@
         $res = selectAll('rooms');
         $i=0;
 
-        $data ="1";
+        $data ="";
 
         while($row = mysqli_fetch_assoc($res))
         {
