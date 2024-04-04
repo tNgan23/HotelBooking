@@ -93,7 +93,6 @@
                         <h5>Send a message</h5>
                         <div class="mb-3">
                             <label class="form-label" style="font-weight: 500;">Name</label>
-                            <!-- Đây là trường nhập liệu email. Sử dụng type="email" giúp trình duyệt kiểm tra xem giá trị nhập vào có đúng định dạng email hay không -->
                             <input name="name" required type="text" class="form-control shadow-none">
                         </div>
                         <div class="mb-3">
@@ -103,12 +102,10 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" style="font-weight: 500;">Subject</label>
-                            <!-- Đây là trường nhập liệu email. Sử dụng type="email" giúp trình duyệt kiểm tra xem giá trị nhập vào có đúng định dạng email hay không -->
                             <input name="subject" required type="text" class="form-control shadow-none">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" style="font-weight: 500;">Message</label>
-                            <!-- Đây là trường nhập liệu email. Sử dụng type="email" giúp trình duyệt kiểm tra xem giá trị nhập vào có đúng định dạng email hay không -->
                             <textarea name="message" required class="form-control shadow-none" rows="5" style="resize: none;"></textarea>
                         </div>
                         <button type="submit" name="send" class="btn text-white custom-bg mt-3">SEND</button>

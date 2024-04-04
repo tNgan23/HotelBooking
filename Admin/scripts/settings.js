@@ -203,21 +203,23 @@
         }
 
         function rem_member(val) {
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "ajax/settings_crud.php", true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-            xhr.onload = function () {
-                if (this.responseText == 1) {
-                    alert('success', 'Member removed!');
-                    get_members();
-                } else {
-                    alert('error', 'Server down!');
-                }
-
+            if (confirm("Are you sure you want to remove this member?")) {
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", "ajax/settings_crud.php", true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        
+                xhr.onload = function () {
+                    if (this.responseText == 1) {
+                        alert('success', 'Member removed!');
+                        get_members();
+                    } else {
+                        alert('error', 'Server down!');
+                    }
+                };
+                xhr.send('rem_member=' + val);
             }
-            xhr.send('rem_member=' + val);
         }
+        
 
         window.onload = function () {
             get_general();
