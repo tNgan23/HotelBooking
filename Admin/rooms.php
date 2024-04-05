@@ -577,7 +577,7 @@ adminLogin();
 
                 xhr.onload = function () {
                     if (this.responseText == 1) {
-                        alert('success', 'Room Removed!', 'image-alert');
+                        alert('success', 'Room removed successfull!');
                         get_all_rooms();
                     } else {
                         alert('error', 'Room removal failed');
