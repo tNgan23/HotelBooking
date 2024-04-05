@@ -101,9 +101,9 @@ adminLogin();
                                 <label class="form-label fw-bold">Features</label>
                                 <div class="row">
                                     <?php
-                                        $res = selectAll('features');
-                                        while($opt = mysqli_fetch_assoc($res)){
-                                            echo"
+                                    $res = selectAll('features');
+                                    while ($opt = mysqli_fetch_assoc($res)) {
+                                        echo "
                                                 <div class='col-md-3 mb-1'>
                                                     <label>
                                                         <input type='checkbox' name='features' value='$opt[id]' class='form-check-input shadow-none'>
@@ -111,7 +111,7 @@ adminLogin();
                                                     </label>
                                                 </div>
                                             ";
-                                        }
+                                    }
                                     ?>
                                 </div>
                             </div>
@@ -119,9 +119,9 @@ adminLogin();
                                 <label class="form-label fw-bold">Facility</label>
                                 <div class="row">
                                     <?php
-                                        $res = selectAll('facilities');
-                                        while($opt = mysqli_fetch_assoc($res)){
-                                            echo"
+                                    $res = selectAll('facilities');
+                                    while ($opt = mysqli_fetch_assoc($res)) {
+                                        echo "
                                                 <div class='col-md-3 mb-1'>
                                                     <label>
                                                         <input type='checkbox' name='facilities' value='$opt[id]' class='form-check-input shadow-none'>
@@ -129,17 +129,17 @@ adminLogin();
                                                     </label>
                                                 </div>
                                             ";
-                                        }
+                                    }
                                     ?>
                                 </div>
                             </div>
                             <div class="col-12 mb-3">
                                 <label class="form-label fw-bold">Description</label>
-                                <textarea name="desc"rows="4" class="form-control shadow-none" required></textarea>
-                                
+                                <textarea name="desc" rows="4" class="form-control shadow-none" required></textarea>
+
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="modal-footer">
                         <button type="reset" class="btn text-secondary shadow-none"
@@ -191,9 +191,9 @@ adminLogin();
                                 <label class="form-label fw-bold">Features</label>
                                 <div class="row">
                                     <?php
-                                        $res = selectAll('features');
-                                        while($opt = mysqli_fetch_assoc($res)){
-                                            echo"
+                                    $res = selectAll('features');
+                                    while ($opt = mysqli_fetch_assoc($res)) {
+                                        echo "
                                                 <div class='col-md-3 mb-1'>
                                                     <label>
                                                         <input type='checkbox' name='features' value='$opt[id]' class='form-check-input shadow-none'>
@@ -201,7 +201,7 @@ adminLogin();
                                                     </label>
                                                 </div>
                                             ";
-                                        }
+                                    }
                                     ?>
                                 </div>
                             </div>
@@ -209,9 +209,9 @@ adminLogin();
                                 <label class="form-label fw-bold">Facility</label>
                                 <div class="row">
                                     <?php
-                                        $res = selectAll('facilities');
-                                        while($opt = mysqli_fetch_assoc($res)){
-                                            echo"
+                                    $res = selectAll('facilities');
+                                    while ($opt = mysqli_fetch_assoc($res)) {
+                                        echo "
                                                 <div class='col-md-3 mb-1'>
                                                     <label>
                                                         <input type='checkbox' name='facilities' value='$opt[id]' class='form-check-input shadow-none'>
@@ -219,16 +219,16 @@ adminLogin();
                                                     </label>
                                                 </div>
                                             ";
-                                        }
+                                    }
                                     ?>
                                 </div>
                             </div>
                             <div class="col-12 mb-3">
                                 <label class="form-label fw-bold">Description</label>
-                                <textarea name="desc"rows="4" class="form-control shadow-none" required></textarea>
-                                
+                                <textarea name="desc" rows="4" class="form-control shadow-none" required></textarea>
+
                             </div>
-                            <input type="hidden" name="room_id" >
+                            <input type="hidden" name="room_id">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -241,17 +241,60 @@ adminLogin();
         </div>
     </div>
 
+    <!-- Manage Room image modal  -->
+
+    <div class="modal fade" id="room-images" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Room Name</h5>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="image-alert">
+
+                    </div>
+                    <div class="border-bottom border-3 pb-3 mb-3">
+                        <form id="add_image_form">
+                            <label class="form-label fw-bold">Add Image</label>
+                            <input type="file" name="image" accept=".jpg, .png, .webp, .jpeg"
+                                class="form-control shadow-none mb-3" required>
+                            <button class="btn custom-bg text-white shadow-none">ADD</button>
+                            <input type="hidden" name="room_id">
+                        </form>
+                    </div>
+                    <div class="table-responsive-lg" style="height: 350px; overflow-y: scroll;">
+                        <table class="table table-hover border text-center">
+                            <thead>
+                                <tr class="bg-dark text-light sticky-top">
+                                    <th scope="col" width="60%">Image</th>
+                                    <th scope="col">Thumb</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody id="room-image-data">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <?php require ('inc/scripts.php'); ?>
     <script>
-        let add_room_form =document.getElementById('add_room_form');
+        let add_room_form = document.getElementById('add_room_form');
 
-        add_room_form.addEventListener('submit',function(e){
+        add_room_form.addEventListener('submit', function (e) {
             e.preventDefault();
             add_room();
         });
 
-        function add_room()
-        {
+        function add_room() {
             let data = new FormData();
             data.append('add_room', '');
             data.append('name', add_room_form.elements['name'].value);
@@ -263,21 +306,21 @@ adminLogin();
             data.append('desc', add_room_form.elements['desc'].value);
 
             let features = [];
-            add_room_form.elements['features'].forEach(el =>{
-                if(el.checked){
+            add_room_form.elements['features'].forEach(el => {
+                if (el.checked) {
                     features.push(el.value);
                 }
             });
 
             let facilities = [];
-            add_room_form.elements['facilities'].forEach(el =>{
-                if(el.checked){
+            add_room_form.elements['facilities'].forEach(el => {
+                if (el.checked) {
                     facilities.push(el.value);
                 }
             });
 
-            data.append('features',JSON.stringify(features));
-            data.append('facilities',JSON.stringify(facilities));
+            data.append('features', JSON.stringify(features));
+            data.append('facilities', JSON.stringify(facilities));
 
             let xhr = new XMLHttpRequest();
             xhr.open("POST", "ajax/rooms.php", true);
@@ -291,7 +334,7 @@ adminLogin();
                     alert('success', 'New room added!');
                     add_room_form.reset();
                     get_all_rooms();
-                    
+
                 }
                 else {
                     alert('error', 'Server Down!')
@@ -300,8 +343,7 @@ adminLogin();
             xhr.send(data);
         }
 
-        function get_all_rooms()
-        {
+        function get_all_rooms() {
             let xhr = new XMLHttpRequest();
             xhr.open("POST", "ajax/rooms.php", true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -313,10 +355,9 @@ adminLogin();
             xhr.send('get_all_rooms');
         }
 
-        let edit_room_form =document.getElementById('edit_room_form');
+        let edit_room_form = document.getElementById('edit_room_form');
 
-        function edit_details(id)
-        {
+        function edit_details(id) {
             let xhr = new XMLHttpRequest();
             xhr.open("POST", "ajax/rooms.php", true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -332,35 +373,34 @@ adminLogin();
                 edit_room_form.elements['children'].value = data.roomdata.children;
                 edit_room_form.elements['desc'].value = data.roomdata.description;
                 edit_room_form.elements['room_id'].value = data.roomdata.id;
-  
-                edit_room_form.elements['features'].forEach(el =>{
-                    if(data.features.includes(Number(el.value))){
-                        el.checked =true;
+
+                edit_room_form.elements['features'].forEach(el => {
+                    if (data.features.includes(Number(el.value))) {
+                        el.checked = true;
                     }
                 });
 
-                edit_room_form.elements['facilities'].forEach(el =>{
-                    if(data.facilities.includes(Number(el.value))){
-                        el.checked =true;
+                edit_room_form.elements['facilities'].forEach(el => {
+                    if (data.facilities.includes(Number(el.value))) {
+                        el.checked = true;
                     }
                 });
             }
-            xhr.send('get_room='+id);
+            xhr.send('get_room=' + id);
         }
 
 
 
-        edit_room_form.addEventListener('submit',function(e){
+        edit_room_form.addEventListener('submit', function (e) {
             e.preventDefault();
             submit_edit_room();
         });
-        
 
-        function submit_edit_room()
-        {
+
+        function submit_edit_room() {
             let data = new FormData();
             data.append('edit_room', '');
-            data.append('room_id',edit_room_form.elements['room_id'].value);
+            data.append('room_id', edit_room_form.elements['room_id'].value);
             data.append('name', edit_room_form.elements['name'].value);
             data.append('area', edit_room_form.elements['area'].value);
             data.append('price', edit_room_form.elements['price'].value);
@@ -370,21 +410,21 @@ adminLogin();
             data.append('desc', edit_room_form.elements['desc'].value);
 
             let features = [];
-            edit_room_form.elements['features'].forEach(el =>{
-                if(el.checked){
+            edit_room_form.elements['features'].forEach(el => {
+                if (el.checked) {
                     features.push(el.value);
                 }
             });
 
             let facilities = [];
-            edit_room_form.elements['facilities'].forEach(el =>{
-                if(el.checked){
+            edit_room_form.elements['facilities'].forEach(el => {
+                if (el.checked) {
                     facilities.push(el.value);
                 }
             });
 
-            data.append('features',JSON.stringify(features));
-            data.append('facilities',JSON.stringify(facilities));
+            data.append('features', JSON.stringify(features));
+            data.append('facilities', JSON.stringify(facilities));
 
             let xhr = new XMLHttpRequest();
             xhr.open("POST", "ajax/rooms.php", true);
@@ -398,7 +438,7 @@ adminLogin();
                     alert('success', 'Room data edited!');
                     edit_room_form.reset();
                     get_all_rooms();
-                    
+
                 }
                 else {
                     alert('error', 'Server Down!')
@@ -409,26 +449,68 @@ adminLogin();
 
 
 
-        function toggle_status(id, val)
-        {
+        function toggle_status(id, val) {
             let xhr = new XMLHttpRequest();
             xhr.open("POST", "ajax/rooms.php", true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 
             xhr.onload = function () {
-                if(this.responseText==1){
-                    alert('success','Status toggled!');
+                if (this.responseText == 1) {
+                    alert('success', 'Status toggled!');
                     get_all_rooms()
                 }
-                else{
-                    alert('success','Server Down!');
+                else {
+                    alert('success', 'Server Down!');
                 }
             }
-            xhr.send('toggle_status='+id+'&value='+val);
+            xhr.send('toggle_status=' + id + '&value=' + val);
         }
 
-        window.onload = function(){
+
+        let add_image_form = document.getElementById('add_image_form');
+        add_image_form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            add_image();
+        });
+
+
+
+        function add_image() {
+            let data = new FormData();
+            data.append('image', add_image_form.elements['image'].files[0]);
+            data.append('room_id', add_image_form.elements['room_id'].value);
+            data.append('add_image', '');
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/rooms.php", true);
+
+            xhr.onload = function () {
+
+                if (this.responseText == 'inv_img') {
+                    alert('error', 'Only JPG, WEBP or PNG images are allowed!');
+
+                }
+                else if (this.responseText == 'inv_size') {
+                    alert('error', 'Image should be less than 2MB!')
+                } else if (this.responseText == 'upd_failed') {
+                    alert('error', 'Image upload failed. Server Down!')
+                } else {
+                    alert('success', 'New image added!','image-alert');
+                    add_image_form.reset();
+
+                }
+            }
+            xhr.send(data);
+        }
+
+        function room_images(id, rname) {
+            document.querySelector("#room-images .modal-title").innerText = rname;
+            add_image_form.elements['room_id'].value = id;
+            add_image_form.elements['image'].value = id;
+        }
+
+        window.onload = function () {
             get_all_rooms();
         }
 
@@ -436,4 +518,5 @@ adminLogin();
 
 
 </body>
+
 </html>

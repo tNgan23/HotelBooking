@@ -7,6 +7,7 @@ define('SITE_URL', 'http://localhost:8080/hotelbooking/');
 define('ABOUT_IMG_PATH', SITE_URL . 'image/about/');
 define('CAROUSEL_IMG_PATH', SITE_URL . 'image/carousel/');
 define('FACILITIES_IMG_PATH', SITE_URL . 'image/facilities/');
+define('ROOMS_IMG_PATH', SITE_URL . 'image/rooms/');
 
 
 
@@ -14,7 +15,7 @@ define('FACILITIES_IMG_PATH', SITE_URL . 'image/facilities/');
 define('UPLOAD_IMAGE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/hotelbooking/image/');
 define('ABOUT_FOLDER', 'about/');
 define('CAROUSEL_FOLDER', 'carousel/');
-define('FACILITIES_FOLDER', 'facilities/');
+define('ROOMS_FOLDER', 'rooms/');
 
 function adminLogin()
 {
