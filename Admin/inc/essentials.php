@@ -18,6 +18,9 @@ define('ABOUT_FOLDER', 'about/');
 define('CAROUSEL_FOLDER', 'carousel/');
 define('USERS_FOLDER', 'users/');
 
+// sendgird api key
+define('SENGIRD_API_KEY',"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");
+
 function adminLogin()
 {
     session_start();
