@@ -37,6 +37,7 @@ input[type=number] {
     height: 1.7px;
 }
 .custom-alert{
+    z-index: 9999;
     position: fixed;
     top: 80px;
     right: 25px;
