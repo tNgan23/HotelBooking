@@ -10,7 +10,7 @@
 
       </p>
     </div>
-    <div class="col-lg-4 p-4">
+    <div class="col-lg-4 p-4 ">
       <h5 class="mb-3">
         Links
       </h5>
@@ -20,7 +20,7 @@
       <a href="contact.php" class="d-inline-block mb-2 text-dark text-decoration-none">Contact us</a><br>
       <a href="about.php" class="d-inline-block mb-2 text-dark text-decoration-none">About</a>
     </div>
-    <div class="col-lg-4 p-4">
+    <div class="col-lg-4 p-4 ">
       <h5 class="mb-3">
         Follow us
       </h5>
@@ -134,6 +134,47 @@
     }
     xhr.send(data);
   });
+
+  let login_form = document.getElementById('login-form');
+
+  login_form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let data = new FormData();
+
+    data.append('email_mob', login_form.elements['email_mob'].value);
+    data.append('pass', login_form.elements['pass'].value);
+    data.append('login', '');
+
+    var myModal = document.getElementById('loginModal');
+    var modal = bootstrap.Modal.getInstance(myModal);
+    modal.hide();
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "ajax/login_register.php", true);
+
+
+
+    xhr.onload = function () {
+      if (this.responseText == 'inv_email_mob') {
+        alert('error', "Invalid Email or Mobile Number!");
+      } 
+      else if (this.responseText == 'not_verified') {
+        alert('error', "Email is already verified ");
+      } 
+      else if (this.responseText == 'inactive') {
+        alert('error', "Account Suspended! Please contact Admin. ");
+      } 
+      else if (this.responseText == 'invalid_pass') {
+        alert('error', "Incorrect Password!");
+      } 
+      else{
+        window.location = window.location.pathname;
+      }
+    }
+    xhr.send(data);
+  });
+
 
 
   setActive();

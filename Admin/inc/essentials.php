@@ -8,6 +8,8 @@ define('ABOUT_IMG_PATH', SITE_URL . 'image/about/');
 define('CAROUSEL_IMG_PATH', SITE_URL . 'image/carousel/');
 define('FACILITIES_IMG_PATH', SITE_URL . 'image/facilities/');
 define('ROOMS_IMG_PATH', SITE_URL . 'image/rooms/');
+define('USERS_IMG_PATH', SITE_URL . 'image/users/');
+
 // define('USERS_IMG_PATH', SITE_URL . 'image/users/');
 
 
@@ -18,8 +20,12 @@ define('ABOUT_FOLDER', 'about/');
 define('CAROUSEL_FOLDER', 'carousel/');
 define('USERS_FOLDER', 'users/');
 
-// sendgird api key
-define('SENGIRD_API_KEY',"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");
+// sendgrid api key
+
+define('SENDGRID_API_KEY',"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");
+define('SENDGRID_EMAIL',"trucnganhuynh001@gmail.com");
+define('SENDGRID_NAME',"HOTEL BOOKING");
+
 
 function adminLogin()
 {
