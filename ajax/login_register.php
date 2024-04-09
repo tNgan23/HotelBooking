@@ -4,28 +4,30 @@ require ('../Admin/inc/essentials.php');
 require ('../inc/sendgrid/sendgrid-php.php');
 
 
-function send_mail($email, $name, $token)
+function send_mail($uemail, $name, $token)
 {
     $email = new \SendGrid\Mail\Mail();
     $email->setFrom("trucnganhuynh001@gmail.com", "HOTEL BOOKING");
     $email->setSubject("Account Verification Link");
 
-    $email->addTo($email, $name);
+    $email->addTo($uemail, $name);
 
 
     $email->addContent(
         "text/html",
         "Click the link to comfirm you email: <br> 
-        <a href='" . SITE_URL . "email_comfirm.php?email=$email&token=$token" . "'>
+        <a href='" . SITE_URL . "email_comfirm.php?email=$uemail&token=$token" . "'>
         CLICK ME
         </a>
         "
     );
     $sendgrid = new \SendGrid(getenv(SENGIRD_API_KEY));
 
-    if ($sendgrid->send($email)) {
+    try{
+        $sendgrid->send($email);
         return 1;
-    } else {
+    }
+    catch(Exception $e){
         return 0;
     }
 }
@@ -75,14 +77,14 @@ if (isset($_POST['register'])) {
 
     $token = bin2hex(random_bytes(16));
 
-    if(!send_mail($data['$email'], $data['name'], $token)){
+    if(!send_mail($data['email'], $data['name'], $token)){
         echo 'mail_failed';
         exit;
     }
 
     $enc_pass = password_hash($data['pass'], PASSWORD_BCRYPT);
 
-    $query = "INSERT INTO `user_cred`(`name`, `email`, `address`, `phonenum`, `dob`, 
+    $query = "INSERT INTO `user_cred`(`name`, `email`, `address`, `phonenum`,
     `dob`, `profile`, `password`, `token`) VALUES (?,?,?,?,?,?,?,?)";
 
     $values = [$data['name'],$data['email'],$data['address'],$data['phonenum'],$data['dob'],$img,$enc_pass,$token];

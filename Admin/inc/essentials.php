@@ -19,7 +19,7 @@ define('CAROUSEL_FOLDER', 'carousel/');
 define('USERS_FOLDER', 'users/');
 
 // sendgird api key
-define('SENGIRD_API_KEY',"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");
+define('SENGIRD_API_KEY',"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");
 
 function adminLogin()
 {
