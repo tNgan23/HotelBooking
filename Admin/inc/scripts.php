@@ -20,13 +20,13 @@
             document.getElementById(position).appendChild(element);
         }
         // Tự động tắt thông báo sau 2 giây 
-        // setTimeout(remAlert, 4000);
+        setTimeout(remAlert, 1000);
 
     }
 
-    // function remAlert() {
-    //     document.getElementsByClassName('alert')[0].remove();
-    // }
+    function remAlert() {
+        document.getElementsByClassName('alert')[0].remove();
+    }
     function setActive() {
         let navbar = document.getElementById('dashboard-menu');
         let a_tags = navbar.getElementsByTagName('a');

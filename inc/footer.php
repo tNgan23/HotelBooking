@@ -66,7 +66,7 @@
       document.getElementById(position).appendChild(element);
     }
     // Tự động tắt thông báo sau 2 giây 
-    setTimeout(remAlert, 5000);
+    setTimeout(remAlert, 2000);
 
   }
 

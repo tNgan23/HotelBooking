@@ -18,12 +18,13 @@ define('USERS_IMG_PATH', SITE_URL . 'image/users/');
 define('UPLOAD_IMAGE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/hotelbooking/image/');
 define('ABOUT_FOLDER', 'about/');
 define('CAROUSEL_FOLDER', 'carousel/');
+define('ROOMS_FOLDER', 'rooms/');
 define('USERS_FOLDER', 'users/');
 
 // sendgrid api key
 
-define('SENDGRID_API_KEY',"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");
-define('SENDGRID_EMAIL',"trucnganhuynh001@gmail.com");
+define('SENDGRID_API_KEY',"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");
+define('SENDGRID_EMAIL',"phanthq2k2@gmail.com");
 define('SENDGRID_NAME',"HOTEL BOOKING");
 
 
