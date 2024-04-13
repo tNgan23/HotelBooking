@@ -106,7 +106,6 @@
                                     <i class="bi bi-star-fill text-warning"></i>
                                 </div>
                             rating;
-
                         $fea_q = mysqli_query($con, "SELECT f.name FROM `features` f 
                                 INNER JOIN `room_features` rfea ON f.id = rfea.features_id 
                                 WHERE rfea.room_id = '$room_data[id]'");
@@ -166,13 +165,15 @@
                             area;
 
                         if (!$settings_r['shutdown']) {
+                            $login=0;
+                            if(isset($_SESSION['login']) && $_SESSION['login'] == true)
+                            {
+                                $login = 1;
+                            }
                             echo <<<book
-                            <a href="#" class="btn w-100 text-white custom-bg shadow-none mb-1">Book Now</a>
-                        
+                            <button onclick='checkLoginToBook($login,$room_data[id])' class="btn w-100 text-white custom-bg shadow-none mb-1">Book Now</button>
                         book;
-                        }
-
-                       
+                        }   
 
                         ?>
                     </div>

@@ -110,14 +110,21 @@
                     $thumb_q = mysqli_query($con,"SELECT * FROM `room_images` 
                         WHERE `room_id`='$room_data[id]' 
                         AND `thumb`='1'");
+                        
                     if(mysqli_num_rows($thumb_q)>0){
                         $thumb_res = mysqli_fetch_assoc($thumb_q);
                         $room_thumb = ROOMS_IMG_PATH.$thumb_res['image'];
                     }
 
                     $book_btn = "";
+
                     if(!$settings_r['shutdown']){
-                      $book_btn="<a href='#' class='btn btn-sm w-100 text-white custom-bg shadow-none mb-2'>Book Now</a>";
+                        $login=0;
+                        if(isset($_SESSION['login']) && $_SESSION['login'] == true)
+                        {
+                          $login = 1;
+                        }
+                      $book_btn="<button onclick='checkLoginToBook($login,$room_data[id])' class='btn btn-sm w-100 text-white custom-bg shadow-none mb-2'>Book Now</button>";
                     }
                     // print room card
 
