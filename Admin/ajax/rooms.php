@@ -305,13 +305,12 @@ if (isset($_POST['remove_room'])) {
     $res2 = delete("DELETE FROM `room_images` WHERE `room_id`=?", [$frm_data['room_id']], 'i');
     $res3 = delete("DELETE FROM `room_features` WHERE `room_id`=?", [$frm_data['room_id']], 'i');
     $res4 = delete("DELETE FROM `room_facilities` WHERE `room_id`=?", [$frm_data['room_id']], 'i');
-    $res5 = update("UPDATE `rooms` SET `removed`=? WHERE `id`=?", [1,$frm_data['room_id']], 'ii');
+    $res5 = update("UPDATE `rooms` SET `removed`=? WHERE `id`=?", [1, $frm_data['room_id']], 'ii');
 
 
     if ($res2 || $res3 || $res4 || $res5) {
         echo 1;
-    }
-    else{
+    } else {
         echo 0;
     }
 }

@@ -58,7 +58,11 @@ input[type=number] {
     background: #555;
 }
 
-
+.h-line{
+    width:150px;
+    margin:0 auto;
+    height: 1.7px;
+}
 @media screen and (max-width: 992px) {
     
     #dashboard-menu{

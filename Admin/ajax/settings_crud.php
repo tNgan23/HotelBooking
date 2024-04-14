@@ -4,7 +4,7 @@ require ('../inc/db_config.php');
 require ('../inc/essentials.php');
 adminLogin();
 
-if (isset ($_POST['get_general'])) {
+if (isset($_POST['get_general'])) {
     $q = "SELECT * FROM `settings` WHERE `sr_no`=?";
     $values = [1];
     $res = select($q, $values, "i");
@@ -14,7 +14,7 @@ if (isset ($_POST['get_general'])) {
 }
 
 
-if (isset ($_POST["upd_genaral"])) {
+if (isset($_POST["upd_genaral"])) {
     $frm_data = filteration($_POST);
 
     $q = "UPDATE `settings` SET `site_title`=?,`site_about`=? WHERE `sr_no`=?";
@@ -23,7 +23,7 @@ if (isset ($_POST["upd_genaral"])) {
     echo $res;
 }
 
-if (isset ($_POST["upd_shutdown"])) {
+if (isset($_POST["upd_shutdown"])) {
     // Giả sử 'update' và 'update' là các hàm được định nghĩa ở nơi khác
     $frm_data = ($_POST['upd_shutdown']) ? 1 : 0;
 
@@ -33,7 +33,7 @@ if (isset ($_POST["upd_shutdown"])) {
     echo $res;
 }
 
-if (isset ($_POST['get_contacts'])) {
+if (isset($_POST['get_contacts'])) {
     $q = "SELECT * FROM `contact_details` WHERE `sr_no`=?";
     $values = [1];
     $res = select($q, $values, "i");
@@ -42,7 +42,7 @@ if (isset ($_POST['get_contacts'])) {
     echo $json_data;
 }
 
-if (isset ($_POST["upd_contacts"])) {
+if (isset($_POST["upd_contacts"])) {
     $frm_data = filteration($_POST);
 
     $q = "UPDATE `contact_details` SET `address`=?,`gmap`=?,`pn1`=?,`pn2`=?,`email`=?,`fb`=?,`insta`=?,`ytb`=?,`iframe`=? WHERE `sr_no`=?";
@@ -51,7 +51,7 @@ if (isset ($_POST["upd_contacts"])) {
     echo $res;
 }
 
-if (isset ($_POST["add_member"])) {
+if (isset($_POST["add_member"])) {
     $frm_data = filteration($_POST);
 
     $img_r = uploadImage($_FILES['picture'], ABOUT_FOLDER);
@@ -69,7 +69,7 @@ if (isset ($_POST["add_member"])) {
         echo $res;
     }
 }
-if (isset ($_POST['get_members'])) {
+if (isset($_POST['get_members'])) {
 
     $res = selectAll('team_details');
     while ($row = mysqli_fetch_assoc($res)) {
@@ -91,7 +91,7 @@ if (isset ($_POST['get_members'])) {
     }
 }
 
-if (isset ($_POST['rem_member'])) {
+if (isset($_POST['rem_member'])) {
     $frm_data = filteration($_POST);
     $values = [$frm_data['rem_member']];
 

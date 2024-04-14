@@ -18,6 +18,7 @@ define('USERS_IMG_PATH', SITE_URL . 'image/users/');
 define('UPLOAD_IMAGE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/hotelbooking/image/');
 define('ABOUT_FOLDER', 'about/');
 define('CAROUSEL_FOLDER', 'carousel/');
+define('FACILITIES_FOLDER', 'carousel/');
 define('ROOMS_FOLDER', 'rooms/');
 define('USERS_FOLDER', 'users/');
 
