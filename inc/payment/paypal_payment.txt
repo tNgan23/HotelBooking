@@ -1,0 +1,27 @@
+tk nhận: trucnganhuynh001@gmail.com
+
+id client: 
+AU3g2DuSRfnmlRNKZLB2OIxw6o45I-PyLmBPOGIIk0as8tEaPtto2lh2sRPLNDgWjZi_SWWcmd72Y0g6
+secret key: 
+EBmEybwEEsO8vvmjyY2SpdGEtVh8pt2_Ckp3B4A6Suti3Vw0yWkZQaU8tNO1Rejek594X0ReOTgaQcxz
+
+tk mail:sb-cnl4t30349939@business.example.com
+mk:5ZK@C+?w
+
+---------------------------------------------------
+tk nhận: garciatrucngan@gmail.com
+
+tk khách hàng để đăng nhập khi thanh toán
+clientid:
+AduaP2p6Hazvz18zEtgBXk4fIXFk34t--kLbTdmIyvJbyAzraRWms96I_zdnq7PfZ9gjlrG_cAHATGHK
+secret key:
+EAxPrvjqJBBfcTWc24TJWLLQNS2mAUdN1Wu5ENFoQFevBMioMTAuKZF-shj77nallm-jLwOfM91MG687
+
+
+https://www.sandbox.paypal.com/vn/webapps/mpp/business
+
+đăng nhập để thanh toán
+tk mail: sb-kwdud30401932@business.example.com
+mk: b)G5Ofs!
+
+

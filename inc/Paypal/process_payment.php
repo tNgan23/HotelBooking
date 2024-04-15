@@ -17,8 +17,9 @@ $client = new PayPalHttpClient($environment);
 if (isset($_GET['token'])) {
     // Nếu có tham số 'token' trong URL, có nghĩa là người dùng đã hoàn thành thanh toán
     // Lấy thông tin đơn hàng từ biểu mẫu thanh toán
-    $product = $_POST['product'];
-    $amount = $_POST['amount'];
+    $days = $_POST['number_of_days']; // Số ngày đặt phòng
+$payment = $_POST['total_amount']; // Tổng số tiền thanh toán
+
 
     // Tạo đơn hàng PayPal
     $request = new OrdersCreateRequest();
@@ -28,10 +29,11 @@ if (isset($_GET['token'])) {
         'purchase_units' => [[
             'amount' => [
                 'currency_code' => 'USD',
-                'value' => $amount
+                'value' => $payment // Số tiền thanh toán
             ]
         ]]
     ];
+    
 
     try {
         // Gọi API PayPal để tạo thanh toán
